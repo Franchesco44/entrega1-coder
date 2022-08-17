@@ -1,0 +1,15 @@
+Fiambreria-Queseria mayorista y minorista
+contamos con atencion al publico y distribucion de mercaderia a Cafes, restaurantes etc etc
+
+Productos
+-Fiambres
+-Quesos
+-Embutidos
+-Bebidas
+-Aseitunas
+-papas
+-vinos
+etc
+
+Envios
+Contamos con un camion para distribuir los pedidos que se hacen
