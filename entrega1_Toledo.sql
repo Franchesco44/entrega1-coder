@@ -1,4 +1,5 @@
-create database if not exists Almacen2_0;
+
+create database if not exists Almacen;
 
 CREATE TABLE IF NOT EXISTS productos(
 	producto_id INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
@@ -38,7 +39,7 @@ CREATE TABLE IF NOT EXISTS venta (
     precio_total INT
 );
 
-CREATE TABLE IF NOT EXISTS categorias (
+CREATE TABLE IF NOT EXISTS categorias_rubros (
 	id_categorias INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
     producto_id INT NOT NULL,
     nombre_categorias VARCHAR(30) NOT NULL,
@@ -58,3 +59,29 @@ CREATE TABLE IF NOT EXISTS factura (
         ON DELETE CASCADE
         ON UPDATE CASCADE  
 );
+
+/* INSERTANDO DATOS */
+USE almacen;
+insert into productos (producto_id,nombre_producto,precio,stock,codigo_balanza) values 
+('2','ARROLLADO DE POLLO','2600','12','311'),
+('3','DONDIOLA','3221','6','331'),
+('4','CANTINPALO','2080','2','324');
+insert into proveedores (proveedor_id,producto_id,direccion,numero_telefono,ciudad,calle,provincia,nombre_proveedor) values 
+('11','1','TAPALQUE 5926','+541146351262','PARQUE AVELLANEDA','TAPALQUE','BUENOS AIRES','FIAMBRES VAES');
+
+select * from proveedores;
+
+/*('2','AV BUSTILLO 12536','PENDIENTE','San Carlos de Bariloche','Rio Negro','BEBIDAS DEL LAGO SA',),
+('3','RUTA.NAC.40','PENDIENTE','San Carlos de Bariloche','Rio Negro','AUTOSERVICIO MAYORISTA DIARCO',),
+('4','MARIANO MORENO 5700','PENDIENTE','San Carlos de Bariloche','Rio Negro','IFG SRL',),
+('5','MARTIN IRIGOYEN 1217','PENDIENTE','San Carlos de Bariloche','Rio Negro','TRES REYES',);*/
+
+
+
+
+
+
+
+
+
+
