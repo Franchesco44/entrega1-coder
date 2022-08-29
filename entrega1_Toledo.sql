@@ -1,4 +1,4 @@
-USE almacen;
+create database if not exists Almacen2_0;
 
 CREATE TABLE IF NOT EXISTS productos(
 	producto_id INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
@@ -58,4 +58,3 @@ CREATE TABLE IF NOT EXISTS factura (
         ON DELETE CASCADE
         ON UPDATE CASCADE  
 );
-
