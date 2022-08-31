@@ -152,6 +152,7 @@ insert into categorias_rubros (id_categorias,nombre_categorias,producto_id) valu
 ('136','BEBIDAS','104');
 
 
+/* FIN DE INSERTS */
 
 
 
@@ -164,11 +165,25 @@ select * from categorias_rubros;
 
 -- CREANDO VIEWS --
 
-CREATE OR REPLACE VIEW productos AS
+CREATE OR REPLACE VIEW v_productos_precios AS 
 (SELECT nombre_producto, precio
 FROM productos
 ORDER BY nombre_producto DESC);
 
+select * from v_productos_precios;
+
+CREATE OR REPLACE VIEW v_ubicacion_de_proveedores AS 
+(SELECT direccion, ciudad, calle, provincia, nombre_proveedor
+FROM proveedores
+);
+
+select * from v_ubicacion_de_proveedores;
+
+CREATE OR REPLACE VIEW v_rubros_fiambres AS
+(SELECT nombre_categorias, producto_id
+from categorias_rubros);
+
+select * from v_rubros_fiambres;
 
 
 
