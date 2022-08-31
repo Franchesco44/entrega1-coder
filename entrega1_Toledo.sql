@@ -69,9 +69,9 @@ ALTER TABLE productos ADD n_proveedor VARCHAR(40);
 /*Hay datos comentados porque al querer insertar nuevos me tira duplicate entry*/
 USE almacen;
 insert into productos (producto_id,nombre_producto,precio,stock,codigo_balanza,n_proveedor) values 
-('100','GRAN CORTE BLEND LOS HAROLDOS  edición limitada x 750 CC','2450','3','0','ROUZIES'),
-('101','LOS HAROLDOS ESTATE','1050','15','0','ROUZIES'),
-('102','LOS HAROLDOS RESERVA DE FAMILIA CABERNET x 750 CC','980','8','0','ROUZIES'),
+('100','GRAN CORTE BLEND LOS HAROLDOS X 750 CC  ','2450','3','0','ROUZIES'),
+('101','LOS HAROLDOS ESTATE X 750 CC','1050','15','0','ROUZIES'),
+('102','LOS HAROLDOS RESERVA X 750 CC ','980','8','0','ROUZIES'),
 ('103','NAMPE MALBEC x 750 CC','2450','3','0','ROUZIES'),
 ('104','CHACABUCO CHENIN BLANCO DULCE 750CC','2450','3','0','ROUZIES');
 
@@ -156,12 +156,18 @@ insert into categorias_rubros (id_categorias,nombre_categorias,producto_id) valu
 
 
 /*SECTOR PARA SELECT TESTS*/
+use almacen;
 SELECT * FROM productos;
 SELECT * FROM proveedores;
 select * from categorias_rubros;
 /*SECTOR PARA SELECT TESTS*/
 
 -- CREANDO VIEWS --
+
+CREATE OR REPLACE VIEW productos AS
+(SELECT nombre_producto, precio
+FROM productos
+ORDER BY nombre_producto DESC);
 
 
 
